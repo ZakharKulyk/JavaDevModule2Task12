@@ -1,0 +1,8 @@
+ALTER TABLE tickets
+    ADD CONSTRAINT FK_PLANET_ID_TO FOREIGN KEY (to_planet_id) REFERENCES planets(id);
+
+ALTER TABLE tickets
+    ADD CONSTRAINT FK_PLANET_ID_FROM FOREIGN KEY (from_planet_id) REFERENCES planets(id);
+
+ALTER TABLE tickets
+    ADD CONSTRAINT FK_CLIENT_ID FOREIGN KEY (client_id) REFERENCES clients(id);
