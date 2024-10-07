@@ -3,6 +3,8 @@ package entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+
+
 @Table(name = "clients")
 @Entity
 @Data
@@ -14,4 +16,5 @@ public class Client {
 
     @Column
     String name;
+
 }

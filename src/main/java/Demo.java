@@ -1,11 +1,9 @@
 import DtoService.ClientDto;
 import DtoService.PlanetDto;
-import DtoService.TicketDto;
-import dbservice.ConnectDb;
 import dbservice.InitDbService;
 import entities.Client;
-import entities.Planet;
-import entities.Planets;
+
+import java.util.List;
 
 
 public class Demo {
@@ -13,16 +11,8 @@ public class Demo {
         InitDbService initDbService = new InitDbService();
         initDbService.initdb();
 
-        Planet planet = new Planet();
-        planet.setId(Planets.UPD);
-        planet.setName("Updated PLANET");
-
         ClientDto clientDto = new ClientDto();
         PlanetDto planetDto = new PlanetDto();
-        TicketDto ticketDto = new TicketDto();
-
-        System.out.println(ticketDto.getAllTickets());
-
 
 
     }
