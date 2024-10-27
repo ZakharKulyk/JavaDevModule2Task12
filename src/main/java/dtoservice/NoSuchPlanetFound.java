@@ -1,4 +1,4 @@
-package DtoService;
+package dtoservice;
 
 public class NoSuchPlanetFound extends  Exception{
     public  NoSuchPlanetFound(String s){

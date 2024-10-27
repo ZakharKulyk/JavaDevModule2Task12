@@ -1,9 +1,7 @@
-import DtoService.ClientDto;
-import DtoService.PlanetDto;
 import dbservice.InitDbService;
+import dtoservice.ClientDto;
+import dtoservice.PlanetDto;
 import entities.Client;
-
-import java.util.List;
 
 
 public class Demo {

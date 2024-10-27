@@ -1,4 +1,4 @@
-package DtoService;
+package dtoservice;
 
 import dbservice.ConnectDb;
 import entities.Planet;
@@ -57,7 +57,6 @@ public class PlanetDto {
             }
             planet.setId(newPlanet.getId());
             planet.setName(newPlanet.getName());
-            session.persist(planet);
 
             transaction.commit();
 

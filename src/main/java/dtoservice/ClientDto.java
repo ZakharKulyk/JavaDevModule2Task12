@@ -1,9 +1,8 @@
-package DtoService;
+package dtoservice;
 
 import dbservice.ConnectDb;
 import entities.Client;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import java.util.List;
@@ -54,8 +53,6 @@ public class ClientDto {
             }
             client.setName(newClient.getName());
 
-            session.persist(client);
-
             transaction.commit();
 
         } catch (Exception ex) {
@@ -89,7 +86,6 @@ public class ClientDto {
 
     public List<Client>getAllClient(){
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
-
         return  session.createQuery("from Client ", Client.class).list();
     }
 
