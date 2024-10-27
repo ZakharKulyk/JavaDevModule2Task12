@@ -1,4 +1,4 @@
-package dbservice;
+package dbconfig;
 
 import entities.Client;
 import entities.Planet;

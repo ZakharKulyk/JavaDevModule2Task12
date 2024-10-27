@@ -1,6 +1,6 @@
-package dtoservice;
+package crudservice;
 
-import dbservice.ConnectDb;
+import dbconfig.ConnectDb;
 import entities.Planet;
 import entities.Planets;
 import org.hibernate.Session;
@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class PlanetDto {
+public class PlanetCrudService {
 
     public Planet getPlanetById(Planets planets){
 

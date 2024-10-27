@@ -1,7 +1,6 @@
-import dbservice.InitDbService;
-import dtoservice.ClientDto;
-import dtoservice.PlanetDto;
-import entities.Client;
+import dbconfig.InitDbService;
+import crudservice.ClientCrudService;
+import crudservice.PlanetCrudService;
 
 
 public class Demo {
@@ -9,8 +8,8 @@ public class Demo {
         InitDbService initDbService = new InitDbService();
         initDbService.initdb();
 
-        ClientDto clientDto = new ClientDto();
-        PlanetDto planetDto = new PlanetDto();
+        ClientCrudService clientCrudService = new ClientCrudService();
+        PlanetCrudService planetCrudService = new PlanetCrudService();
 
 
     }

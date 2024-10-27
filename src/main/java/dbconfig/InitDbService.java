@@ -1,4 +1,4 @@
-package dbservice;
+package dbconfig;
 
 import org.flywaydb.core.Flyway;
 

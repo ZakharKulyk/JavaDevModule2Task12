@@ -1,15 +1,15 @@
-package dtoservice;
+package crudservice;
 
-import dbservice.ConnectDb;
+import dbconfig.ConnectDb;
 import entities.Client;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ClientDto {
+public class ClientCrudService {
 
-    public Client getClientById(int id) {
+    private Client getClientById(int id) {
         try (Session session = ConnectDb.getInstance().getSessionFactory().openSession()) {
             Client client = session.get(Client.class, id);
             if (client == null) {
@@ -23,7 +23,7 @@ public class ClientDto {
 
     }
 
-    public void createClient(Client client) {
+    private void createClient(Client client) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
         try {
@@ -41,7 +41,7 @@ public class ClientDto {
 
     }
 
-    public void updateClient(Client newClient, int clientId) {
+    private void updateClient(Client newClient, int clientId) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
 
@@ -62,7 +62,7 @@ public class ClientDto {
         }
     }
 
-    public void delete(int id) {
+    private void delete(int id) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
         try {
@@ -84,7 +84,7 @@ public class ClientDto {
         }
     }
 
-    public List<Client>getAllClient(){
+    private List<Client>getAllClient(){
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         return  session.createQuery("from Client ", Client.class).list();
     }
