@@ -1,4 +1,4 @@
-package crudservice;
+package exceptions;
 
 public class NoSuchPlanetFound extends  Exception{
     public  NoSuchPlanetFound(String s){

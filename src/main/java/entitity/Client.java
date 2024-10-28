@@ -1,8 +1,7 @@
-package entities;
+package entitity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 
 
 @Table(name = "clients")
@@ -12,9 +11,9 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    int id;
+    private int id;
 
     @Column
-    String name;
+    private String name;
 
 }

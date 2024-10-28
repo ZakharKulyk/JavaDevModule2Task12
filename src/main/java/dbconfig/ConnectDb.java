@@ -1,8 +1,8 @@
 package dbconfig;
 
-import entities.Client;
-import entities.Planet;
-import entities.Ticket;
+import entitity.Client;
+import entitity.Planet;
+import entitity.Ticket;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

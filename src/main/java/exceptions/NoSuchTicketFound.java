@@ -1,4 +1,4 @@
-package crudservice;
+package exceptions;
 
 public class NoSuchTicketFound extends Exception {
     public NoSuchTicketFound(String s) {

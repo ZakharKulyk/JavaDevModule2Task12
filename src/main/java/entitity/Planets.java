@@ -1,4 +1,4 @@
-package entities;
+package entitity;
 
 public enum Planets {
     MARS,

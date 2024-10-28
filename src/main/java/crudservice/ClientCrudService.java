@@ -1,7 +1,8 @@
 package crudservice;
 
 import dbconfig.ConnectDb;
-import entities.Client;
+import entitity.Client;
+import exceptions.NoSuchClientFound;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class ClientCrudService {
 
-    private Client getClientById(int id) {
+    public Client getClientById(int id) {
         try (Session session = ConnectDb.getInstance().getSessionFactory().openSession()) {
             Client client = session.get(Client.class, id);
             if (client == null) {
@@ -23,7 +24,7 @@ public class ClientCrudService {
 
     }
 
-    private void createClient(Client client) {
+    public void createClient(Client client) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
         try {
@@ -41,7 +42,7 @@ public class ClientCrudService {
 
     }
 
-    private void updateClient(Client newClient, int clientId) {
+    public void updateClient(Client newClient, int clientId) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
 
@@ -57,12 +58,12 @@ public class ClientCrudService {
 
         } catch (Exception ex) {
             transaction.rollback();
-        }finally {
+        } finally {
             session.close();
         }
     }
 
-    private void delete(int id) {
+    public void delete(int id) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
         try {
@@ -78,15 +79,14 @@ public class ClientCrudService {
             transaction.commit();
         } catch (Exception ex) {
             transaction.rollback();
-        }
-        finally {
+        } finally {
             session.close();
         }
     }
 
-    private List<Client>getAllClient(){
+    public List<Client> getAllClient() {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
-        return  session.createQuery("from Client ", Client.class).list();
+        return session.createQuery("from Client ", Client.class).list();
     }
 
 

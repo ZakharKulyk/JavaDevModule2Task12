@@ -1,4 +1,4 @@
-package entities;
+package entitity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -18,14 +18,14 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name = "client_id", referencedColumnName = "id")
-    Client clientId;
+    private Client clientId;
 
     @ManyToOne
     @JoinColumn(name = "from_planet_id", referencedColumnName = "id")
-    Planet fromPlanet;
+    private Planet fromPlanet;
 
     @ManyToOne
     @JoinColumn(name = "to_planet_id", referencedColumnName = "id")
-    Planet toPlanet;
+    private Planet toPlanet;
 
 }

@@ -1,4 +1,4 @@
-package entities;
+package entitity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,12 +9,11 @@ import lombok.Data;
 public class Planet {
 
 
-
     @Enumerated(EnumType.STRING)
     @Id
-    Planets id;
+    private Planets id;
 
     @Column
-    String name;
+    private String name;
 
 }

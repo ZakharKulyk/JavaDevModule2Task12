@@ -1,4 +1,4 @@
-package crudservice;
+package exceptions;
 
 public class NoSuchClientFound extends Exception {
     public NoSuchClientFound(String s) {
