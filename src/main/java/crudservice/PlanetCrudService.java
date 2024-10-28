@@ -3,7 +3,7 @@ package crudservice;
 import dbconfig.ConnectDb;
 import entitity.Planet;
 import entitity.Planets;
-import exceptions.NoSuchPlanetFound;
+import exception.NoSuchPlanetFound;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

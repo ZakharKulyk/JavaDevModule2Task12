@@ -1,4 +1,4 @@
-package exceptions;
+package exception;
 
 public class NoSuchTicketFound extends Exception {
     public NoSuchTicketFound(String s) {

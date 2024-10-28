@@ -2,7 +2,7 @@ package crudservice;
 
 import dbconfig.ConnectDb;
 import entitity.Client;
-import exceptions.NoSuchClientFound;
+import exception.NoSuchClientFound;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
