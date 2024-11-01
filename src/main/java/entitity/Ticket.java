@@ -17,15 +17,15 @@ public class Ticket {
     private LocalDateTime createdAt;
 
     @ManyToOne
-    @JoinColumn(name = "client_id", referencedColumnName = "id")
+    @JoinColumn(name = "client_id")
     private Client clientId;
 
     @ManyToOne
-    @JoinColumn(name = "from_planet_id", referencedColumnName = "id")
+    @JoinColumn(name = "from_planet_id")
     private Planet fromPlanet;
 
     @ManyToOne
-    @JoinColumn(name = "to_planet_id", referencedColumnName = "id")
+    @JoinColumn(name = "to_planet_id")
     private Planet toPlanet;
 
 }

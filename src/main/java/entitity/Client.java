@@ -2,6 +2,9 @@ package entitity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
+
+import java.util.List;
 
 
 @Table(name = "clients")
@@ -15,5 +18,10 @@ public class Client {
 
     @Column
     private String name;
+
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "clientId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Ticket>tickets;
 
 }
