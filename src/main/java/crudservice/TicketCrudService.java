@@ -60,12 +60,18 @@ public class TicketCrudService {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
 
+        if (ticket == null || ticket.getCreatedAt() == null || ticket.getToPlanet() == null
+                || ticket.getFromPlanet() == null || ticket.getClientId() == null) {
+            throw new IllegalArgumentException("Ticket or its properties cannot be null");
+        }
+
         try {
             transaction = session.beginTransaction();
 
             session.persist(ticket);
 
             transaction.commit();
+
         } catch (Exception exception) {
             System.out.println("Ticket wasn't created");
             transaction.rollback();
@@ -74,14 +80,14 @@ public class TicketCrudService {
         }
     }
 
-    public  void deleteById(int id){
+    public void deleteById(int id) {
         Session session = ConnectDb.getInstance().getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
 
             Ticket ticketById = getTicketById(id);
-            if(ticketById==null){
+            if (ticketById == null) {
                 throw new NoSuchTicketFound("no such ticket found");
             }
 
@@ -89,10 +95,10 @@ public class TicketCrudService {
 
             transaction.commit();
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("Failed to delete");
             transaction.rollback();
-        }finally {
+        } finally {
             session.close();
         }
     }

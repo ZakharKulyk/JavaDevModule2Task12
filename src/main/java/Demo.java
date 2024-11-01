@@ -2,6 +2,7 @@ import crudservice.TicketCrudService;
 import dbconfig.InitDbService;
 import crudservice.ClientCrudService;
 import crudservice.PlanetCrudService;
+import entitity.Client;
 import entitity.Planet;
 import entitity.Planets;
 import entitity.Ticket;
@@ -18,8 +19,9 @@ public class Demo {
         PlanetCrudService planetCrudService = new PlanetCrudService();
         TicketCrudService ticketCrudService = new TicketCrudService();
 
+        Ticket ticket = new Ticket();
 
-       ticketCrudService.deleteById(11);
+       ticketCrudService.createTicket(ticket);
 
 
     }
